@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Test React</title>
+</head>
+<body>
+<div id="root"></div>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    function Header() {
+        const title = 'La maison jungle';
+        return (
+            <h1>{title}</h1>
+        )
+    }
+
+    function Description() {
+        return (
+            <p>Ici achetez toutes les plantes dont vous avez toujours rêvé :cactus::seedling::bamboo:</p>
+        )
+    }
+
+    function Banner() {
+        return (<div>
+                <Header/><Description/>
+            </div>
+        )
+    }
+
+    function Cart() {
+        const monsteraPrice = 8
+        const ivyPrice = 10
+        const flowerPrice = 15
+        return (<div>
+            <h2>Panier</h2>
+            <ul>
+                <li>Monstera : {monsteraPrice}€</li>
+                <li>Lierre : {ivyPrice}€</li>
+                <li>Fleurs : {flowerPrice}€</li>
+            </ul>
+            Total : {monsteraPrice + ivyPrice + flowerPrice}€
+        </div>)
+    }
+
+    ReactDOM.render(
+        <React.Fragment><Banner/><Cart/></React.Fragment>,
+        document.getElementById("root"))
+</script>
+</body>
+</html>
